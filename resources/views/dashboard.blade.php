@@ -4,11 +4,6 @@
             {{session('message')}}
         </p>
     @endif
-    @if(session('showSweetAlert'))
-        <script>
-            Swal.fire(@json(session('sweetAlertOptions')));
-        </script>
-    @endif
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-5">
             <div class="dark:bg-gray-800 rounded-2xl ">

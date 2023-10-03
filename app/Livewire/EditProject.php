@@ -262,24 +262,24 @@ class EditProject extends Component
 
         //revisar si hay nuevos documentos que subir 
         if($this->anexouno_nuevo){
-            unlink(storage_path('app/proyects/anexos/' . $this->form->anexo_uno));
-            $anexo_uno = $this->anexouno_nuevo->store('proyects/anexos');
-            $name_anexo_uno = str_replace('proyects/anexos/', '', $anexo_uno);
+            unlink(storage_path('app/proyectos/anexos/' . $this->form->folio . '/' . $this->form->anexo_uno));
+            $anexo_uno = $this->anexouno_nuevo->store('proyectos/anexos/' . $this->form->folio);
+            $name_anexo_uno = str_replace('proyectos/anexos/' . $this->form->folio, '', $anexo_uno);
         }
         if($this->anexodos_nuevo){
-            unlink(storage_path('app/proyects/anexos/' . $this->form->anexo_dos));
-            $anexo_dos = $this->anexodos_nuevo->store('proyects/anexos');
+            unlink(storage_path('app/proyectos/anexos/' . $this->form->folio . '/' . $this->form->anexo_dos));
+            $anexo_dos = $this->anexodos_nuevo->store('proyectos/anexos/' . $this->form->folio);
             $name_anexo_dos = str_replace('proyects/anexos/', '', $anexo_dos);
         }
         if($this->anexotres_nuevo){
-            unlink(storage_path('app/proyects/anexos/' . $this->form->anexo_tres));
-            $anexo_tres = $this->anexotres_nuevo->store('proyects/anexos');
+            unlink(storage_path('app/proyectos/anexos/' . $this->form->folio . '/' . $this->form->anexo_tres));
+            $anexo_tres = $this->anexotres_nuevo->store('proyectos/anexos/' . $this->form->folio);
             $name_anexo_tres = str_replace('proyects/anexos/', '', $anexo_tres);
         }
         if($this->presentacion_proyecto_nuevo){
-            unlink(storage_path('app/proyects/presentaciones/' . $this->form->presentacion_proyecto));
-            $presentacion_proyecto = $this->presentacion_proyecto_nuevo->store('proyects/presentaciones');
-            $name_presentacion_proyecto = str_replace('proyects/anexos/', '', $presentacion_proyecto);
+            unlink(storage_path('app/proyectos/presentaciones/'  . $this->form->folio . '/' . $this->form->presentacion_proyecto));
+            $presentacion_proyecto = $this->presentacion_proyecto_nuevo->store('proyectos/presentaciones/'. $this->form->folio);
+            $name_presentacion_proyecto = str_replace('proyectos/presentaciones/' . $this->form->folio, '', $presentacion_proyecto);
         }
        
         //Encontrar el Proyecto a editar 

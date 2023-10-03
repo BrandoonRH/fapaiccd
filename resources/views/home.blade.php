@@ -19,9 +19,9 @@
     </head>
     <body class="">
         <div class="relative h-full w-full bg-no-repeat bg-center bg-fixed bg-cover" style="background-image: url('/images/pcc-inicio.webp');">
-            <div class="bg-black w-full h-full lg:bg-opacity-75">
+            <div class="bg-black w-full h-full lg:bg-opacity-75 overflow-auto">
 
-                <nav class="px-12 py-2 md:flex md:justify-between md:items-center md:space-y-0 space-y-10">
+                <nav class="px-12 py-5 md:flex md:justify-between md:items-center md:space-y-0 space-y-10">
                     <div class="flex justify-start">
                         <img src={{"/images/CCD-LogoV3.svg"}}  alt="Logo" class="h-12"/>
                         <img src={{"/images/Apoyo_Alto_Impacto_1.webp"}} alt="Logo fondo" class="h-12"/>
@@ -42,7 +42,7 @@
                 </nav>
 
                     <div class="flex justify-center">
-                        <div class="px-16 py-2 self-center mt-2 rounded-md w-full ">
+                        <div class="px-16 py-10 self-center mt-2 rounded-md w-full ">
                             <h2 class="text-4xl text-white mb-8 font-semibold">¿Que es el Fondo de Apoyo a Proyectos de Alto Impacto a la Industria Creativa Digital (FAPAI)?</h2>
                             
                             <div class="md:flex md:justify-between md:items-center md:gap-5 space-y-5">
@@ -55,26 +55,26 @@
                                 </p>
                             </div>
 
-                            <div class="mt-3 md:grid md:grid-cols-3 md:gap-4 text-white">
-                                <div class=" p-2 text-center rounded-md hover:bg-white hover:text-black transition-all hover:-translate-y-5">
+                            <div class="mt-10 md:grid md:grid-cols-3 md:gap-4 text-white">
+                                <div class=" p-3 text-center rounded-md hover:bg-white hover:text-black transition-all hover:-translate-y-5">
                                     <p class="text-2xl font-bold">Equipamiento</p>
                                     <p>E.1. Adquisición de equipo especializado</p>
                                     <p>E.2. Herramientas técnicas</p>
                                     <p>E.3. Software</p>
                                 </div>
-                                <div class=" p-2 text-center rounded-md hover:bg-white hover:text-black transition-all hover:-translate-y-5">
+                                <div class=" p-3 text-center rounded-md hover:bg-white hover:text-black transition-all hover:-translate-y-5">
                                     <p class="text-2xl font-bold">Capacitación</p>
                                     <p>C.1. Especialización de capital humano</p>
                                     <p>C.2. Certificaciones</p>
                                     <p>C.3. Consultoría</p>
                                 </div>
-                                <div class=" p-2 text-center rounded-md hover:bg-white hover:text-black transition-all hover:-translate-y-5">
+                                <div class=" p-3 text-center rounded-md hover:bg-white hover:text-black transition-all hover:-translate-y-5">
                                     <p class="text-2xl font-bold">Promoción</p>
                                     <p>P.1 Participación de unidades económicas del sector creativo de Jalisco , legalmente constituidas, en eventos, concursos, festivales, congresos nacionales e internacionales del sector Creativo Digital </p>
                                 </div>                               
                             </div>
 
-                            <div class="mt-2 p-2">
+                            <div class="mt-3 p-5">
                                 <h3 class="text-center text-white text-3xl font-extrabold ">Descargar los archivos necesarios</h3>
                                 <div class="flex flex-col  lg:flex-row lg:justify-between w-full mt-5 lg:items-baseline space-y-3 text-center">
 

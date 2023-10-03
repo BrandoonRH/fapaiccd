@@ -4,7 +4,7 @@
 @endphp
 <div class="overflow-y-auto h-96 bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
     @forelse ($projects as $project)
-        <div class="p-6 text-gray-900 dark:text-gray-100 border-white border m-2 rounded-md md:flex md:justify-between md:items-center">
+        <div class="p-6 text-gray-900 dark:text-gray-100 border-b-4 border-white  m-2 rounded-md md:flex md:justify-between md:items-center">
             <div class="space-y-2">
             <h3 class="text-2xl text-white font-extrabold">{{$project->nombre_proyecto}}</h3>
             <p class="text-sm font-extrabold">Fecha de registro: {{ Carbon::parse($project->fecha_registro)->isoFormat('dddd D [de] MMMM [del] YYYY') }}</p>

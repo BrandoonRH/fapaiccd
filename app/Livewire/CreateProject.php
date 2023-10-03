@@ -142,7 +142,7 @@ class CreateProject extends Component
         }*/
         $data = $this->form->validate(); 
     
-            // Almacenar los archivos PDF en subcarpetas por folio
+        // Almacenar los archivos PDF en subcarpetas por folio
         $folioSubcarpeta = 'proyectos/anexos/' . $this->form->folio;
 
         $anexo_uno = $this->form->anexo_uno->store($folioSubcarpeta);

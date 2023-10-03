@@ -32,5 +32,14 @@ class AuthServiceProvider extends ServiceProvider
             ->action('Confirmar Cuenta', $url)
             ->line('Si no creaste esta cuenta, puedes ignorar este mensaje');
         });
+
+       /* VerifyEmail::createUrlUsing(function($notifiable, $url){
+            return (new MailMessage)
+            ->subject('Cambiar Contraseña en FAPAI')
+            ->line('Está recibiendo este correo electrónico porque hemos recibido una solicitud de restablecimiento de contraseña para su cuenta.')
+            ->action('Restablecer Contraseña', $url)
+            ->line('Este enlace para restablecer la contraseña caducará en 60 minutos.')
+            ->line('Si no ha solicitado el restablecimiento de la contraseña, no es necesario realizar ninguna acción.');
+        }); */
     }
 }
