@@ -76,9 +76,8 @@
 </div>
 
 @push('scripts')
-   
-  
-    <script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>     
        (() => {
         document.getElementById('cliente_nombre').value = '';
         document.getElementById('cliente_empresa').value = '';
@@ -121,7 +120,7 @@
                 Swal.fire({
                     position: 'center',
                     icon: 'warning',
-                    title: 'Faltan Campos por Llenar',
+                    title: 'Faltan campos para agregar cliente',
                     showConfirmButton: false,
                     timer: 1500
                 });

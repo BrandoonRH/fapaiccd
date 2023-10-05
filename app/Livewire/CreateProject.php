@@ -108,18 +108,24 @@ class CreateProject extends Component
 
     public function agregarCliente()
     {
-        
-        $this->form->clientes[] = $this->form->nuevoCliente;
-        $this->form->nuevoCliente = [
-            'cliente_nombre' => '',
-            'cliente_empresa' => '',
-            'cliente_telefono' => '',
-            'cliente_correo' => '',
-            'cliente_url' => '',
-        ];
-       
-         // Emitir un evento Livewire para volver a renderizar la vista
-        $this->dispatch('clienteAgregado');
+        // Validar los campos
+        if (empty($this->form->nuevoCliente['cliente_nombre']) || empty($this->form->nuevoCliente['cliente_empresa']) || empty($this->form->nuevoCliente['cliente_telefono']) || empty($this->form->nuevoCliente['cliente_correo']) || empty($this->form->nuevoCliente['cliente_url'])) {
+            // Al menos un campo está vacío, dispara el evento "faltanCampos"
+            $this->dispatch('faltanCampos');
+        } else {
+            // los campos están llenos, agregar el nuevo cliente
+            $this->form->clientes[] = $this->form->nuevoCliente;
+            $this->form->nuevoCliente = [
+                'cliente_nombre' => '',
+                'cliente_empresa' => '',
+                'cliente_telefono' => '',
+                'cliente_correo' => '',
+                'cliente_url' => '',
+            ];
+
+            // Disparar evento 'clienteAgregado'
+            $this->dispatch('clienteAgregado');
+        }
          
     }
     public function eliminarClientes(){

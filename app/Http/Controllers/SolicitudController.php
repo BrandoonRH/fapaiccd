@@ -19,7 +19,7 @@ class SolicitudController extends Controller
 
         if ($user->projects) {
             // El usuario ya tiene un proyecto registrado, redirige o muestra un mensaje de error.
-            return redirect()->route('dashboard')->with([
+            /* return redirect()->route('dashboard')->with([
                 'showSweetAlert' => true,
                 'sweetAlertOptions' => [
                     'position' => 'center',
@@ -28,7 +28,11 @@ class SolicitudController extends Controller
                     'showConfirmButton' => false,
                     'timer' => 1500,
                 ],
-            ]);
+            ]);*/
+            // Crear un Mensaje de confirmación 
+            session()->flash('message', '¡Ya tienes un Proyecto Registrado!');
+            //Redireccionar 
+            return redirect()->route('dashboard'); 
         }
 
         return view('proyectos.create');
@@ -41,7 +45,7 @@ class SolicitudController extends Controller
 
         if(auth()->user()->id !== $project->user_id){
              // El usuario ya tiene un proyecto registrado, redirige o muestra un mensaje de error.
-             return redirect()->route('dashboard')->with([
+             /*return redirect()->route('dashboard')->with([
                 'showSweetAlert' => true,
                 'sweetAlertOptions' => [
                     'position' => 'center',
@@ -50,7 +54,11 @@ class SolicitudController extends Controller
                     'showConfirmButton' => false,
                     'timer' => 1500,
                 ],
-            ]);
+            ]);*/
+            // Crear un Mensaje de confirmación 
+            session()->flash('message', '¡No tienes Permisos para editar este proyecto!');
+            //Redireccionar 
+            return redirect()->route('dashboard'); 
         }
 
         return view('proyectos.edit', [
