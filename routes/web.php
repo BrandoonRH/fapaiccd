@@ -21,7 +21,7 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::get('/dashboard', [SolicitudController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
 Route::get('/proyecto/register', [SolicitudController::class, 'create'])->middleware(['auth', 'verified'])->name('proyecto.create');
-Route::get('/proyecto/edit/{project}', [SolicitudController::class, 'edit'])->middleware(['auth', 'verified', /*'can:update,project'*/ ])->name('proyecto.edit');
+Route::get('/proyecto/{project}/edit', [SolicitudController::class, 'edit'])->middleware(['auth', 'verified', /*'can:update,project'*/ ])->name('proyecto.edit');
 Route::get('/proyecto/download-pdf/{project}', [SolicitudController::class, 'generatePDF'])->middleware(['auth', 'verified'])->name('pdf');
 
 Route::get('/download-convocatoria', [DownloadFilesController::class, 'downloadConvocatoria'])->name('downloadConvocatoria');

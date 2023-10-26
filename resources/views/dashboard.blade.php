@@ -11,10 +11,7 @@
                 <livewire:show-projects>
             </div>
 
-            <div class="dark:bg-gray-800 rounded-2xl h-96">
-                <h2 class="text-white font-bold text-3xl p-3 text-center">Otro Asunto</h2>
-              
-            </div>
+            
         
         </div>
     </div>

@@ -29,7 +29,8 @@ class SolicitudPolicy
      */
     public  function create(User $user): bool
     {
-        //
+        // Verificar si el usuario ya tiene un proyecto registrado
+        
     }
 
     /**
@@ -37,7 +38,12 @@ class SolicitudPolicy
      */
     public function update(User $user, Project $project): bool
     {
-        return $user->id === $project->user_id;
+        return $user->id === $project->user_id; 
+    }
+
+    public function downloadPDF(User $user, Project $project): bool
+    {
+        return $user->id === $project->user_id; 
     }
 
     /**

@@ -4,7 +4,9 @@ namespace App\Providers;
 
 // use Illuminate\Support\Facades\Gate;
 
-
+use App\Models\Project;
+use App\Models\User;
+use App\Policies\SolicitudPolicy;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Auth\Notifications\VerifyEmail;
@@ -18,6 +20,8 @@ class AuthServiceProvider extends ServiceProvider
      */
     protected $policies = [
        // Project::class => ProjectPolicy::class,
+       Project::class => SolicitudPolicy::class,
+       //User::class => SolicitudPolicy::class
     ];
 
     /**

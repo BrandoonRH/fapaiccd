@@ -9,26 +9,15 @@ use Barryvdh\DomPDF\Facade\Pdf;
 class SolicitudController extends Controller
 {
 
-    public static function index()
+    public  function index()
     {
         return view('dashboard');
     }
-    public static function create()
+    public  function create()
     {
         $user = auth()->user();
 
         if ($user->projects) {
-            // El usuario ya tiene un proyecto registrado, redirige o muestra un mensaje de error.
-            /* return redirect()->route('dashboard')->with([
-                'showSweetAlert' => true,
-                'sweetAlertOptions' => [
-                    'position' => 'center',
-                    'icon' => 'warning',
-                    'title' => '¡Ya tienes un Proyecto Registrado!',
-                    'showConfirmButton' => false,
-                    'timer' => 1500,
-                ],
-            ]);*/
             // Crear un Mensaje de confirmación 
             session()->flash('message', '¡Ya tienes un Proyecto Registrado!');
             //Redireccionar 
@@ -41,33 +30,16 @@ class SolicitudController extends Controller
     public  function edit(Project $project)
     {
         //policy que no funciono 
-        //$this->authorize('update', $project);
-
-        if(auth()->user()->id !== $project->user_id){
-             // El usuario ya tiene un proyecto registrado, redirige o muestra un mensaje de error.
-             /*return redirect()->route('dashboard')->with([
-                'showSweetAlert' => true,
-                'sweetAlertOptions' => [
-                    'position' => 'center',
-                    'icon' => 'warning',
-                    'title' => '¡No tienes Permisos para editar este proyecto!',
-                    'showConfirmButton' => false,
-                    'timer' => 1500,
-                ],
-            ]);*/
-            // Crear un Mensaje de confirmación 
-            session()->flash('message', '¡No tienes Permisos para editar este proyecto!');
-            //Redireccionar 
-            return redirect()->route('dashboard'); 
-        }
-
+        $this->authorize('update', $project);
         return view('proyectos.edit', [
             'project' => $project
         ]);
     }
-    public static function generatePDF(Project $project)
+    
+    public  function generatePDF(Project $project)
     {
-
+        //policy que no funciono 
+        $this->authorize('downloadPDF', $project);
         $pdf = Pdf::loadView('proyectos.pdf', compact('project'));
         return $pdf->stream();
         /*return view('proyectos.pdf',[
